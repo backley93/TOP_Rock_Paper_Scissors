@@ -57,7 +57,7 @@ function playRound(playerSelection, computerSelection) {
 } 
 
 /* This function plays a 5 round game of rock paper scissors. Using the helper function playRound() in combination with a for loop the function gets the result 
-of each playRound() and publishes them to the console log. After 5 rounds the function determines if the player won, the computer won or if there was a tie. */
+of each playRound() and publishes them as alerts. After 5 rounds the function determines if the player won, the computer won or if there was a tie. */
 
 function game() {
     let pScore = 0;
