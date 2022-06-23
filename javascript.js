@@ -48,3 +48,41 @@ function playRound(playerSelection, computerSelection) {
     }
 } 
 
+function game() {
+    let pScore = 0;
+
+    let plyrPick = null;
+
+    let cScore = 0;
+
+    let compPick = null;
+
+    for (let i = 0; i < 5; i++) {
+        plyrPick = prompt().toUpperCase();
+
+        compPick = computerPlay().toUpperCase();
+
+        if (playRound(plyrPick, compPick) === 'W') {
+            pScore = pScore = 1;
+        } else if (playRound(plyrPick, compPick) === 'L') {
+            cScore = cScore + 1;
+        }
+
+        alert(`Player picked\: ${plyrPick} and the computer picked\: ${compPick}.`);
+
+        alert(`The score is, Player\: ${pScore} to Computer\: ${cScore}.`);
+    }
+
+    if (pScore > cScore) {
+        return alert(`Congratulations! You win by a score of ${pScore} to ${cScore}.`);
+    }
+
+    if (cScore > pScore) {
+        return alert(`Sorry, you lost to the computer by a score of ${cScore} to ${pScore}.`);
+    }
+
+    if (pScore == cScore) {
+        return alert(`Gasp! It\'s a tie by a score of ${pScore} to ${cScore}.`);
+    }
+}
+
