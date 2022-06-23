@@ -1,3 +1,5 @@
+/* This function generates a random number between 1 and 9 inclusive. */
+
 function random() {
     let num = Math.round(Math.random()*10);
 
@@ -9,6 +11,8 @@ function random() {
 
     return num;
 }
+
+/* This function uses the helper function random() to determine if the computer will select rock paper or scissors using conditional statements. */
 
 function computerPlay() {
     let num = random();
@@ -26,6 +30,10 @@ function computerPlay() {
         return result;
     }
 }
+
+/* This function takes two agruments, player selection which is driven by a prompt in the game() function and computer selection which is returned in the 
+computerPlay() function. Based off the parameters it determines a winner and returns a value tied to the result. */
+
 
 function playRound(playerSelection, computerSelection) {
     let plyr = playerSelection;
@@ -47,6 +55,9 @@ function playRound(playerSelection, computerSelection) {
         alert('Please enter rock, paper or scissors *case insensitive*');
     }
 } 
+
+/* This function plays a 5 round game of rock paper scissors. Using the helper function playRound() in combination with a for loop the function gets the result 
+of each playRound() and publishes them to the console log. After 5 rounds the function determines if the player won, the computer won or if there was a tie. */
 
 function game() {
     let pScore = 0;
