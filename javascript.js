@@ -59,11 +59,23 @@ function game() {
 
     for (let i = 0; i < 5; i++) {
         plyrPick = prompt().toUpperCase();
+        console.log(plyrPick);
+
+        if (plyrPick !== 'ROCK' && plyrPick !== 'PAPER' && plyrPick != 'SCISSORS') {
+            alert('You must enter rock, paper or scissors.');
+            break;
+        }
 
         compPick = computerPlay().toUpperCase();
+        console.log(compPick);
+
+        if (compPick !== 'ROCK' && compPick !== 'PAPER' && compPick !== 'SCISSORS') {
+            alert('We\'re experiencing technical difficulties please try the game again.');
+            break;
+        }
 
         if (playRound(plyrPick, compPick) === 'W') {
-            pScore = pScore = 1;
+            pScore = pScore + 1;
         } else if (playRound(plyrPick, compPick) === 'L') {
             cScore = cScore + 1;
         }
