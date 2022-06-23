@@ -12,22 +12,39 @@ function random() {
 
 function computerPlay() {
     let num = random();
-    console.log(num);
 
     let result = null;
-    console.log(result);
 
     if (num >= 1 && num <= 3) {
         result = 'rock';
-        console.log(result);
         return result;
     } else if (num >= 4 && num <= 6) {
         result = 'paper';
-        console.log(result);
         return result;
     } else if (num >= 7 && num <= 9) {
         result = 'scissors';
-        console.log(result);
         return result;
     }
 }
+
+function playRound(playerSelection, computerSelection) {
+    let plyr = playerSelection;
+
+    let comp = computerSelection;
+
+    let result = null;
+
+    if ((plyr === 'ROCK' && comp === 'SCISSORS') || (plyr === 'PAPER' && comp === 'ROCK') || (plyr === 'SCISSORS' && comp === 'PAPER')) {
+        result = 'W';
+        return result;
+    } else if ((plyr === 'ROCK' && comp === 'PAPER') || (plyr === 'PAPER' && comp === 'SCISSORS') || (plyr === 'SCISSORS' && comp === 'ROCK')) {
+        result = 'L';
+        return result;
+    } else if (plyr === comp) {
+        result = 'T';
+        return result;
+    } else {
+        alert('Please enter rock, paper or scissors *case insensitive*');
+    }
+} 
+
