@@ -12,7 +12,8 @@ function random() {
     return num;
 }
 
-/* This function uses the helper function random() to determine if the computer will select rock paper or scissors using conditional statements. */
+/* This function uses the helper function random() to determine if the computer
+     will select rock paper or scissors using conditional statements. */
 
 function computerPlay() {
     let num = random();
@@ -31,8 +32,10 @@ function computerPlay() {
     }
 }
 
-/* This function takes two agruments, player selection which is driven by a prompt in the game() function and computer selection which is returned in the 
-computerPlay() function. Based off the parameters it determines a winner and returns a value tied to the result. */
+/* This function takes two agruments, player selection which is driven by a 
+    prompt in the game() function and computer selection which is returned in the 
+    computerPlay() function. Based off the parameters it determines a winner and returns
+    a value tied to the result. */
 
 
 function playRound(playerSelection, computerSelection) {
@@ -42,10 +45,14 @@ function playRound(playerSelection, computerSelection) {
 
     let result = null;
 
-    if ((plyr === 'ROCK' && comp === 'SCISSORS') || (plyr === 'PAPER' && comp === 'ROCK') || (plyr === 'SCISSORS' && comp === 'PAPER')) {
+    if ((plyr === 'ROCK' && comp === 'SCISSORS') || 
+        (plyr === 'PAPER' && comp === 'ROCK') || 
+        (plyr === 'SCISSORS' && comp === 'PAPER')) {
         result = 'W';
         return result;
-    } else if ((plyr === 'ROCK' && comp === 'PAPER') || (plyr === 'PAPER' && comp === 'SCISSORS') || (plyr === 'SCISSORS' && comp === 'ROCK')) {
+    } else if ((plyr === 'ROCK' && comp === 'PAPER') || 
+        (plyr === 'PAPER' && comp === 'SCISSORS') || 
+        (plyr === 'SCISSORS' && comp === 'ROCK')) {
         result = 'L';
         return result;
     } else if (plyr === comp) {
@@ -56,8 +63,10 @@ function playRound(playerSelection, computerSelection) {
     }
 } 
 
-/* This function plays a 5 round game of rock paper scissors. Using the helper function playRound() in combination with a for loop the function gets the result 
-of each playRound() and publishes them as alerts. After 5 rounds the function determines if the player won, the computer won or if there was a tie. */
+/* This function plays a 5 round game of rock paper scissors. Using the helper
+    function playRound() in combination with a for loop the function gets the result 
+    of each playRound() and publishes them as alerts. After 5 rounds the function 
+    determines if the player won, the computer won or if there was a tie. */
 
 function game() {
     let pScore = 0;
