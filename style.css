@@ -3,16 +3,18 @@
     font-family: 'Righteous';
 }
 
+h1,
+h2,
+p {
+    background-color: rgb(107, 66, 156);
+}
+
 .title {
     margin: 25px;
     padding: 25px;
     box-shadow: 10px 10px rgb(44, 27, 65);
-}
-
-.title,
-h1 {
     background-color: rgb(107, 66, 156);
-    font-size: 64px;
+    font-size: 56px;
     text-align: center;
     color: rgb(182, 149, 222);
     text-shadow: 8px 8px rgb(44, 27, 65);
@@ -57,10 +59,6 @@ h1 {
     margin: 25px;
     background-color: rgb(107, 66, 156);
     box-shadow: 10px 10px rgb(44, 27, 65);
-}
-
-h2 {
-    background-color: rgb(107, 66, 156);
 }
 
 .buttons {

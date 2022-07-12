@@ -45,6 +45,17 @@ inputs.forEach(input => {
     })
 });
 
+//Function to call playRound() each time a button is clicked
+
+let result = null;
+
+inputs.forEach(input => {
+    input.addEventListener('click', (e) => {
+        result = playRound();
+        return result;
+    })
+});
+
 /* This function takes two agruments, player selection which is driven by a 
     prompt in the game() function and computer selection which is returned in the 
     computerPlay() function. Based off the parameters it determines a winner and returns
@@ -53,9 +64,9 @@ inputs.forEach(input => {
 
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerInput.toUpperCase();
-    console.log(playerSelection);
+
     computerSelection = computerPlay();
-    console.log(computerSelection);
+
     let result = null;
 
     if ((playerSelection === 'ROCK' && computerSelection === 'SCISSORS') || 
