@@ -47,14 +47,39 @@ inputs.forEach(input => {
 
 //Function to call playRound() each time a button is clicked
 
-let result = null;
+let outcome = null;
+
+let playerScore = 0;
+const playerBoard = document.querySelector('.pScore');
+
+let computerScore = 0;
+const computerBoard = document.querySelector('.cScore');
 
 inputs.forEach(input => {
     input.addEventListener('click', (e) => {
-        result = playRound();
-        return result;
+        outcome = playRound();
+        if (outcome === 'W') {
+            playerScore = playerScore + 1;
+            console.log(playerScore);
+            playerBoard.textContent = `PLAYER SCORE: ${playerScore}`;
+        } else if (outcome === 'L') {
+            computerScore = computerScore + 1;
+            console.log(computerScore);
+            computerBoard.textContent = `COMPUTER SCORE: ${computerScore}`;
+        } 
     })
 });
+
+
+
+//Manipulate the score board div for the player
+
+
+
+
+
+
+
 
 /* This function takes two agruments, player selection which is driven by a 
     prompt in the game() function and computer selection which is returned in the 
@@ -63,24 +88,27 @@ inputs.forEach(input => {
 
 
 function playRound(playerSelection, computerSelection) {
-    playerSelection = playerInput.toUpperCase();
+    playerSelection = playerInput;
 
     computerSelection = computerPlay();
-
+    
     let result = null;
 
     if ((playerSelection === 'ROCK' && computerSelection === 'SCISSORS') || 
         (playerSelection === 'PAPER' && computerSelection === 'ROCK') || 
         (playerSelection === 'SCISSORS' && computerSelection === 'PAPER')) {
         result = 'W';
+        console.log(result);
         return result;
     } else if ((playerSelection === 'ROCK' && computerSelection === 'PAPER') || 
         (playerSelection === 'PAPER' && computerSelection === 'SCISSORS') || 
         (playerSelection === 'SCISSORS' && computerSelection === 'ROCK')) {
         result = 'L';
+        console.log(result);
         return result;
     } else if (playerSelection === computerSelection) {
         result = 'T';
+        console.log(result);
         return result;
     }
 }

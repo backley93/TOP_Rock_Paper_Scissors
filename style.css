@@ -24,8 +24,7 @@ p {
     color: rgb(182, 149, 222);
     text-shadow: 5px 5px rgb(44, 27, 65);
     font-size: 48px;
-    margin: 25px;
-    padding: 25px 100px 25px 100px;
+    padding: 25px;
     display: flex;
     justify-content: space-evenly;
 }
@@ -33,11 +32,18 @@ p {
 .player,
 .computer {
     background-color: rgb(107, 66, 156);
-    width: 50%;
     display: flex;
     justify-content: center;
     box-shadow: 10px 10px rgb(44, 27, 65);
-    margin: 10px;
+    width: 100%;
+}
+
+.player {
+    margin-right: 10px;
+}
+
+.computer {
+    margin-left: 10px;
 }
 
 .score {
@@ -72,11 +78,15 @@ button {
     height: 100px;
     font-size: 32px;
     color: rgb(182, 149, 222);
-    border: solid 2px rgb(182, 149, 222);
+    border: none;
     border-radius: 10px;
     text-shadow: 5px 5px rgb(44, 27, 65);
-    background-color: rgb(87, 53, 128);
+    background-color: rgb(107, 66, 156);
     box-shadow: 10px 10px rgb(44, 27, 65);
+}
+
+button:hover {
+    color: white;
 }
 
 .footer {
