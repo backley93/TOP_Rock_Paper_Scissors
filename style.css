@@ -1,9 +1,97 @@
 * {
-    background-color: rgb(100, 100, 100);
-    font-family: 'Ubuntu', sans-serif;
+    background-color: rgb(87, 53, 128);
+    font-family: 'Righteous';
 }
 
+.title {
+    margin: 25px;
+    padding: 25px;
+    box-shadow: 10px 10px rgb(44, 27, 65);
+}
+
+.title,
 h1 {
+    background-color: rgb(107, 66, 156);
+    font-size: 64px;
     text-align: center;
-    color: white;
+    color: rgb(182, 149, 222);
+    text-shadow: 8px 8px rgb(44, 27, 65);
+}
+
+.scoreBoard {
+    color: rgb(182, 149, 222);
+    text-shadow: 5px 5px rgb(44, 27, 65);
+    font-size: 48px;
+    margin: 25px;
+    padding: 25px 100px 25px 100px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.player,
+.computer {
+    background-color: rgb(107, 66, 156);
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    box-shadow: 10px 10px rgb(44, 27, 65);
+    margin: 10px;
+}
+
+.score {
+    background-color: rgb(107, 66, 156);
+    margin-left: 5px;
+}
+
+.playerScore,
+.computerScore {
+    background-color: rgb(107, 66, 156);
+}
+
+.chooseTitle {
+    color: rgb(182, 149, 222);
+    font-size: 36px;
+    text-align: center;
+    text-shadow: 5px 5px rgb(44, 27, 65);
+    padding: 25px;
+    margin: 25px;
+    background-color: rgb(107, 66, 156);
+    box-shadow: 10px 10px rgb(44, 27, 65);
+}
+
+h2 {
+    background-color: rgb(107, 66, 156);
+}
+
+.buttons {
+    padding: 50px 25px 50px 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    width: 200px;
+    height: 100px;
+    font-size: 32px;
+    color: rgb(182, 149, 222);
+    border: solid 2px rgb(182, 149, 222);
+    border-radius: 10px;
+    text-shadow: 5px 5px rgb(44, 27, 65);
+    background-color: rgb(87, 53, 128);
+    box-shadow: 10px 10px rgb(44, 27, 65);
+}
+
+.footer {
+    padding: 20px;
+    margin: 25px;
+    background-color:rgb(107, 66, 156);
+    box-shadow: 10px 10px rgb(44, 27, 65);
+    display: flex;
+    justify-content: center;
+}
+
+.footText {
+    color:rgb(182, 149, 222);
+    text-shadow: 2px 2px rgb(44, 27, 65);
+    background-color:rgb(107, 66, 156);
 }
