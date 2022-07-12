@@ -45,8 +45,10 @@ inputs.forEach(input => {
     })
 });
 
-//Function to call playRound() each time a button is clicked
-
+/*DOM Manipulation that keeps score, displays who won the round,
+and resets the page after a game winner is determined and
+displayed on screen
+*/
 let outcome = null;
 
 let playerScore = 0;
@@ -55,42 +57,68 @@ const playerBoard = document.querySelector('.pScore');
 let computerScore = 0;
 const computerBoard = document.querySelector('.cScore');
 
+const info = document.querySelector('.choose');
+
+const pInput = document.querySelector('.pChoice');
+const cInput = document.querySelector('.cChoice');
+
 inputs.forEach(input => {
     input.addEventListener('click', (e) => {
         outcome = playRound();
-        if (outcome === 'W') {
+        if (outcome === 'W' && playerScore < 5) {
             playerScore = playerScore + 1;
-            console.log(playerScore);
             playerBoard.textContent = `PLAYER SCORE: ${playerScore}`;
-        } else if (outcome === 'L') {
+            info.textContent = 'YOU WON THE ROUND!'
+        } else if (outcome === 'L' && computerScore < 5) {
             computerScore = computerScore + 1;
-            console.log(computerScore);
             computerBoard.textContent = `COMPUTER SCORE: ${computerScore}`;
+            info.textContent = 'SORRY THE COMPUTER WON ;(';
+        } else if (outcome === 'T') {
+            info.textContent = 'GASP! IT\'S A TIE!';
         } 
+
+        if (playerScore == 5) {
+            info.textContent = 'YOU WON THE GAME!'
+        } else if (computerScore == 5) {
+            info.textContent = 'YOU LOST THE GAME.'
+        }
+
+        pInput.textContent = `PLAYER CHOSE: ${playerInput}`;
+        cInput.textContent = `COMPUTER CHOSE: ${computerInput}`;
     })
 });
 
+//Function for pop-up option to play again
 
+const popUp = document.querySelector('.playAgain');
 
-//Manipulate the score board div for the player
+const fade = document.querySelector('.fade');
 
-
-
-
-
-
-
+inputs.forEach(input => {
+    input.addEventListener('click', (e) => {
+        if (playerScore === 5 || computerScore === 5) {
+            popUp.setAttribute('style', 'visibility: visible;');
+            fade.setAttribute('style', 'visibility: visible;');
+        }
+        if (input.className === 'playAgain') {
+            window.location.reload();
+        }
+    })
+});
 
 /* This function takes two agruments, player selection which is driven by a 
     prompt in the game() function and computer selection which is returned in the 
     computerPlay() function. Based off the parameters it determines a winner and returns
     a value tied to the result. */
 
+let computerInput = null;
 
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerInput;
 
     computerSelection = computerPlay();
+
+    computerInput = computerSelection;
     
     let result = null;
 
@@ -98,17 +126,14 @@ function playRound(playerSelection, computerSelection) {
         (playerSelection === 'PAPER' && computerSelection === 'ROCK') || 
         (playerSelection === 'SCISSORS' && computerSelection === 'PAPER')) {
         result = 'W';
-        console.log(result);
         return result;
     } else if ((playerSelection === 'ROCK' && computerSelection === 'PAPER') || 
         (playerSelection === 'PAPER' && computerSelection === 'SCISSORS') || 
         (playerSelection === 'SCISSORS' && computerSelection === 'ROCK')) {
         result = 'L';
-        console.log(result);
         return result;
     } else if (playerSelection === computerSelection) {
         result = 'T';
-        console.log(result);
         return result;
     }
 }
